@@ -16,7 +16,8 @@ public class EnemySpawnPoints : MonoBehaviour {
 		spawnPoints = new GameObject[transform.childCount];
 		for(int i=0; i<transform.childCount; i++)
 		{
-			spawnPoints[i] = transform.GetChild(i);
+			//Debug.LogError("Idemo");
+			spawnPoints[i] = transform.GetChild(i).gameObject;
 		}
 	}
 

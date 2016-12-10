@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 	{
 		if(attacksLeft <= 0 || attackModeOn)
 			return;
-
+		gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 		CancelInvoke("RefillAttack");
 		attacksLeft--;
 		attackModeOn = true;
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
 	void AttackOff()
 	{
 		attackModeOn = false;
-
+		gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 		Invoke("RefillAttack", attackRefillTime);
 	}
 
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 		}
 
 		//skok
-		if(Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0)
+		if(Input.GetKeyDown(KeyCode.W) && jumpsLeft > 0)
 		{
 			rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);	
 
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
 		}
 
 		//attack
-		if(Input.GetKeyDown(KeyCode.S))
+		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			Attack();
 		}

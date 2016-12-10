@@ -18,7 +18,16 @@ public class Base : MonoBehaviour {
 	public void Hurt()
 	{
 		health-=damage;
+		CameraControl.instance.Shake();
 
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.gameObject.tag == "Enemy")
+		{
+			Hurt();
+		}
 	}
 
 }

@@ -16,7 +16,7 @@ public class EnemyDaddy : MonoBehaviour {
 
 	void Start()
 	{
-		InvokeRepeating("DropEnemy", 0f, 0.5f);
+		InvokeRepeating("DropEnemy", 1f, 1.2f);
 	}
 
 	void DropEnemy()
