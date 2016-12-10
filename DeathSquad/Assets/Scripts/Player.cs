@@ -27,19 +27,10 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		Time.timeScale = timeScale;
-		/*if(rigidbody.velocity.magnitude > maxVelocity)
-		{
-			rigidbody.velocity.Normalize();
-			rigidbody.velocity *= maxVelocity;
-			
-		}
-		*/
+
 		if(Input.GetKey(KeyCode.A))
 		{
-			//if(rigidbody.velocity.magnitude < maxVelocity)
-			//	rigidbody.velocity = new Vector2(rigidbody.velocity.x - velocityAddPerFrame, rigidbody.velocity.y);
-			rigidbody.AddForce(new Vector2(-1 * horizontalMulti, 0), ForceMode2D.Impulse);
+			rigidbody.AddForce(new Vector2(-horizontalMulti, 0), ForceMode2D.Impulse);
 			if(-rigidbody.velocity.x > maxVeloPerX)
 			{
 				rigidbody.velocity = new Vector2(-maxVeloPerX, rigidbody.velocity.y);
@@ -52,29 +43,15 @@ public class Player : MonoBehaviour
 			{
 				rigidbody.velocity = new Vector2(maxVeloPerX, rigidbody.velocity.y);
 			}
-			//if(rigidbody.velocity.magnitude < maxVelocity)
-			//rigidbody.velocity = new Vector2(rigidbody.velocity.x + velocityAddPerFrame, rigidbody.velocity.y);
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0)
 		{
-			
-
-			if(jumpsLeft == 1)
-			{
-				rigidbody.AddForce(new Vector2(0, 2 * verticalMulti), ForceMode2D.Impulse);	
-			}
-			else if(jumpsLeft == 2)
-			{
-				rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);	
-			}
+			rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);	
 
 			if(rigidbody.velocity.y > maxVeloPerY)
 			{
-				if(jumpsLeft == 1)
-				{
-					rigidbody.velocity = new Vector2(rigidbody.velocity.x, maxVeloPerY);	
-				}
+				rigidbody.velocity = new Vector2(rigidbody.velocity.x, maxVeloPerY);	
 			}
 			jumpsLeft--; 
 		}
@@ -85,5 +62,10 @@ public class Player : MonoBehaviour
 	public void RestartJumps()
 	{
 		jumpsLeft = 2;
+	}
+
+	public void AddForcePerY()
+	{
+		//rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);
 	}
 }
