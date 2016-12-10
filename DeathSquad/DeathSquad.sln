@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{321ED2E0-0382-996E-2A56-8B163FBA074C}") = "DeathSquad", "Assembly-CSharp.csproj", "{623E20D5-AE2C-FFB8-9DC1-41DE6862CA59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{623E20D5-AE2C-FFB8-9DC1-41DE6862CA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623E20D5-AE2C-FFB8-9DC1-41DE6862CA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623E20D5-AE2C-FFB8-9DC1-41DE6862CA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623E20D5-AE2C-FFB8-9DC1-41DE6862CA59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
