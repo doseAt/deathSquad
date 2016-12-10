@@ -12,8 +12,13 @@ public class Player : MonoBehaviour
 	public float maxVeloPerX;
 	public float maxVeloPerY;
 	public float timeScale = 1;
-
 	public int jumpsLeft;
+
+	public int maxAttacks;
+	public int attacksLeft;
+	public bool attackModeOn = false;
+	public float attackTime;
+	public float attackRefillTime;
 
 
 	void Awake()
@@ -23,11 +28,46 @@ public class Player : MonoBehaviour
 		Time.timeScale = 1.2f;
 	}
 
+	void Attack()
+	{
+		if(attacksLeft <= 0 || attackModeOn)
+			return;
+
+		CancelInvoke("RefillAttack");
+		attacksLeft--;
+		attackModeOn = true;
+		Invoke("AttackOff", attackTime);
+	}
+
+	void AttackOff()
+	{
+		attackModeOn = false;
+
+		Invoke("RefillAttack", attackRefillTime);
+	}
+
+	void RefillAttack()
+	{
+		if(attacksLeft < maxAttacks)
+		{
+			attacksLeft++;
+			Invoke("RefillAttack", attackRefillTime);
+		}
+	}
+
+
+
+
+
+
+
+
 
 
 	void Update()
 	{
 
+		//kretnja levo
 		if(Input.GetKey(KeyCode.A))
 		{
 			rigidbody.AddForce(new Vector2(-horizontalMulti, 0), ForceMode2D.Impulse);
@@ -36,6 +76,7 @@ public class Player : MonoBehaviour
 				rigidbody.velocity = new Vector2(-maxVeloPerX, rigidbody.velocity.y);
 			}
 		}
+		//kretnja desno
 		if(Input.GetKey(KeyCode.D))
 		{
 			rigidbody.AddForce(new Vector2(1* horizontalMulti, 0), ForceMode2D.Impulse);
@@ -45,6 +86,7 @@ public class Player : MonoBehaviour
 			}
 		}
 
+		//skok
 		if(Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0)
 		{
 			rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);	
@@ -56,16 +98,27 @@ public class Player : MonoBehaviour
 			jumpsLeft--; 
 		}
 
+		//attack
+		if(Input.GetKeyDown(KeyCode.S))
+		{
+			Attack();
+		}
+
+		if(Input.GetKeyDown(KeyCode.W))
+		{
+			Blood.instance.ClearBlood();
+		}
+
+		//test shake kamere
+		if(Input.GetKeyDown(KeyCode.M))
+		{
+			CameraControl.instance.Shake();
+		}
 
 	}
 
 	public void RestartJumps()
 	{
 		jumpsLeft = 2;
-	}
-
-	public void AddForcePerY()
-	{
-		//rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);
 	}
 }

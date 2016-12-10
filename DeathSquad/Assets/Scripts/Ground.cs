@@ -5,10 +5,11 @@ public class Ground : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		//Debug.LogError(other.gameObject.name);
 		if(other.gameObject.tag == "Player")
 		{
-			//Debug.Log("Aloooo");
-			other.gameObject.transform.parent.GetComponent<Player>().RestartJumps();
+			//Debug.LogError("Aloooo");
+			other.gameObject.GetComponent<Player>().RestartJumps();
 		}
 	}
 }
