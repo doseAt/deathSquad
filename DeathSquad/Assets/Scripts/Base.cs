@@ -19,7 +19,7 @@ public class Base : MonoBehaviour {
 	{
 		health-=damage;
 		CameraControl.instance.Shake();
-
+		gameObject.GetComponent<UIPlayTween>().Play(true);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
