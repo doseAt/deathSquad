@@ -22,17 +22,14 @@ public class Blood : MonoBehaviour {
 
 	public void DropBlood()
 	{
-		/*
 		int x = Random.Range(0, bloods.Length - 1);
 		GameObject dropedBlood = Instantiate(bloods[x]) as GameObject;
 		SpriteRenderer sr = dropedBlood.GetComponent<SpriteRenderer>();
 		droppedBloods.Add(sr);
-		*/
 	}
 
 	public void ClearBlood()
 	{
-		/*
 		foreach(SpriteRenderer sr in droppedBloods)
 		{
 			sr.color = new Color(1,1,1, sr.color.a - 0.3f);
@@ -45,7 +42,6 @@ public class Blood : MonoBehaviour {
 				droppedBloods.Remove(sr);
 			}
 		}
-*/
 	}
 
 }
