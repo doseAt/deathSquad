@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using Pokega;
 public class Blood : MonoBehaviour {
 
 	public static Blood instance = null;
@@ -32,6 +32,8 @@ public class Blood : MonoBehaviour {
 
 	public void ClearBlood()
 	{
+		if(droppedBloods.Count > 0)
+			Pokega.SoundControl.instance.PlaySFX("glass");
 		foreach(GameObject go in droppedBloods)
 		{
 			SpriteRenderer sr = go.GetComponent<SpriteRenderer>();

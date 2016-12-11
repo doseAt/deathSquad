@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
 	public float attackRefillTime;
 	public GameObject lightSaber;
 	public GameObject[] attacksLeftUIElemets;
+	public UILabel pointsLabel;
+
+	public int points = 0;
 
 	void Start(){
 		Pokega.SoundControl.instance.PlaySFX("theme");
@@ -145,6 +148,8 @@ public class Player : MonoBehaviour
 				attacksLeftUIElemets[i].SetActive(false);
 		}
 
+
+		pointsLabel.text = points.ToString();
 	}
 
 	public void RestartJumps()

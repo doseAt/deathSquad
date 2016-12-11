@@ -1,27 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Scripts/Base.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemySpawnPoints.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/Player.cs" Line="103" Column="5" />
-      <File FileName="Assets/Scripts/Ground.cs" Line="14" Column="3" />
-      <File FileName="Assets/Scripts/SpaceMaker.cs" Line="30" Column="9" />
-      <File FileName="Assets/Scripts/EnemyDaddy.cs" Line="11" Column="3" />
-      <File FileName="Assets/Scripts/Blood.cs" Line="48" Column="3" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="56" Column="5" />
-      <File FileName="Assets/Scripts/Base.cs" Line="23" Column="53" />
-      <File FileName="Assets/Scripts/SoundControl.cs" Line="123" Column="54" />
-      <File FileName="Assets/NGUI/Scripts/Editor/NGUIEditorExtensions.cs" Line="35" Column="6" />
-      <File FileName="Assets/NGUI/Scripts/Tweening/TweenPosition.cs" Line="66" Column="35" />
-      <File FileName="Assets/Scripts/CameraControl.cs" Line="37" Column="47" />
+      <File FileName="Assets/Assets/Scripts/Blood.cs" Line="27" Column="3" />
+      <File FileName="Assets/Assets/Scripts/Player.cs" Line="145" Column="44" />
+      <File FileName="Assets/Assets/Scripts/TestWalkerScript.cs" Line="14" Column="59" />
+      <File FileName="Assets/Assets/Scripts/EnemySpawnMachine.cs" Line="38" Column="67" />
+      <File FileName="Assets/Assets/Scripts/BezierSpline.cs" Line="37" Column="38" />
+      <File FileName="Assets/Assets/Scripts/CameraControl.cs" Line="50" Column="57" />
+      <File FileName="Assets/Assets/Scripts/EnemyDaddy.cs" Line="19" Column="42" />
+      <File FileName="Assets/Assets/Scripts/Base.cs" Line="28" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="DeathSquad" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
 
-
+	public int pointsForMe;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
 			Player p = other.gameObject.GetComponent<Player>();
 			if(p.attackModeOn)
 			{
+				p.points+=pointsForMe;
 				Die();
 			}
 		}
@@ -53,9 +54,8 @@ public class Enemy : MonoBehaviour {
 		//instanciraj partikle
 		//instanciraj krv na ekran
 		Blood.instance.DropBlood();
-		//Debug.Log("Enemy died");
+		Pokega.SoundControl.instance.PlaySFX("hurt", 0.85f, 1.15f);
 		Destroy(gameObject);
-
 	}
 
 
