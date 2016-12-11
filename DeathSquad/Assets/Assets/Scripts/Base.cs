@@ -43,7 +43,7 @@ public class Base : MonoBehaviour {
 		if(health <= 0)
 		{
 			Time.timeScale = 0.1f;
-			Invoke("StartOver", 0.2f);
+			Invoke("StartOver", 0.4f);
 		}
 	}
 

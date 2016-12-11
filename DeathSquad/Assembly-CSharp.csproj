@@ -193,6 +193,7 @@
      <Compile Include="Assets\Assets\Scripts\EnemySpawnMachine.cs" />
      <Compile Include="Assets\Assets\Scripts\EnemySpawnPoints.cs" />
      <Compile Include="Assets\Assets\Scripts\FollowAlpha.cs" />
+     <Compile Include="Assets\Assets\Scripts\Gameplay.cs" />
      <Compile Include="Assets\Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Assets\Scripts\Line.cs" />
      <Compile Include="Assets\Assets\Scripts\Paralax.cs" />
