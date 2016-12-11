@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Pokega;
 
@@ -20,6 +20,7 @@ public class Base : MonoBehaviour {
 	{
 		health-=damage;
 		CameraControl.instance.Shake();
+		gameObject.GetComponent<UIPlayTween>().Play(true);
 		Pokega.SoundControl.instance.PlaySFX("bomb");
 
 
