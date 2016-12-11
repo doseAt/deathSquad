@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
 
 		}
 
-		if(Input.GetKeyDown(KeyCode.W))
+		if(Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			Blood.instance.ClearBlood();
 		}

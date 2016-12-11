@@ -6,7 +6,7 @@ public class Blood : MonoBehaviour {
 
 	public static Blood instance = null;
 	public GameObject[] bloods;
-	List<SpriteRenderer> droppedBloods;
+	List<GameObject> droppedBloods;
 
 
 
@@ -18,28 +18,34 @@ public class Blood : MonoBehaviour {
 			Destroy (gameObject);
 	}
 
+	void Start()
+	{
+		droppedBloods = new List<GameObject>();
+	}
+
 
 
 	public void DropBlood()
 	{
+		Debug.LogError("ALo bre");
 		int x = Random.Range(0, bloods.Length - 1);
-		GameObject dropedBlood = Instantiate(bloods[x]) as GameObject;
-		SpriteRenderer sr = dropedBlood.GetComponent<SpriteRenderer>();
-		droppedBloods.Add(sr);
+		GameObject dropedBlood = Instantiate(bloods[x], Vector3.zero, Quaternion.identity) as GameObject;
+		droppedBloods.Add(bloods[x]);
 	}
 
 	public void ClearBlood()
 	{
-		foreach(SpriteRenderer sr in droppedBloods)
+		Debug.LogError("Error");
+		foreach(GameObject go in droppedBloods)
 		{
-			sr.color = new Color(1,1,1, sr.color.a - 0.3f);
-
+			go.GetComponent<SpriteRenderer>().color = new Color(1,1,1, go.GetComponent<SpriteRenderer>().color.a - 0.3f);
 		}
-		foreach(SpriteRenderer sr in droppedBloods)
+		foreach(GameObject go in droppedBloods)
 		{
-			if(sr.color.a < 0.2f)
+			if(go.GetComponent<SpriteRenderer>().color.a < 0.2f)
 			{
-				droppedBloods.Remove(sr);
+				Destroy(go);
+				droppedBloods.Remove(go);
 			}
 		}
 	}
