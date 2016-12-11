@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 	public bool attackModeOn = false;
 	public float attackTime;
 	public float attackRefillTime;
-
+	public GameObject lightSaber;
 
 	void Start(){
 		Pokega.SoundControl.instance.PlaySFX("theme");
@@ -73,22 +73,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
-
-
-
-
-
-
-
-
-
 	void Update()
 	{
+
+		lightSaber.SetActive(attackModeOn);
+
 		if(rigidbody.velocity.x < 0)
 		{
 			transform.localScale = new Vector3(-1, 1, 1);
 		}
-		else
+		else if(rigidbody.velocity.x > 0)
 		{
 			transform.localScale = new Vector3(1, 1, 1);
 		}
