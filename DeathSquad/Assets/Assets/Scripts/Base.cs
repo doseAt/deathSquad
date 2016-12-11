@@ -8,6 +8,7 @@ public class Base : MonoBehaviour {
 	public float damage;
 	public static Base instance = null;
 	public UISprite healthBar;
+	public UILabel healthLabel;
 
 	void Awake()
 	{
@@ -39,6 +40,7 @@ public class Base : MonoBehaviour {
 	void Update()
 	{
 		healthBar.fillAmount = health;
+		healthLabel.text = ((int)(health * 100)).ToString();
 	}
 
 }
