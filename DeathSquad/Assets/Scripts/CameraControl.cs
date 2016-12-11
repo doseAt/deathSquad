@@ -6,6 +6,8 @@ public class CameraControl : MonoBehaviour {
 	public static CameraControl instance = null;
 	bool isShaking;
 	Camera camera;
+	public Transform otherCam;
+
 
 	void Awake()
 	{
@@ -31,11 +33,14 @@ public class CameraControl : MonoBehaviour {
 		{			
 			if(transform.rotation.z == 0.0f)
 			{
-				transform.Rotate(new Vector3(0,0,1), Random.Range(-2.5f, 2.5f));
+				float rand= Random.Range(-2.5f, 2.5f);
+				transform.Rotate(new Vector3(0,0,1),rand);
+				otherCam.transform.Rotate(new Vector3(0,0,1),rand);
 			}
 			else
 			{
 				transform.rotation = new Quaternion(0,0,0,1);
+				otherCam.transform.rotation = new Quaternion(0,0,0,1);
 			}
 			yield return null;
 		}

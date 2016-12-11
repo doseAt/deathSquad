@@ -189,6 +189,7 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyDaddy.cs" />
      <Compile Include="Assets\Scripts\EnemySpawnPoints.cs" />
+     <Compile Include="Assets\Scripts\FollowAlpha.cs" />
      <Compile Include="Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SideWalls.cs" />

@@ -7,6 +7,7 @@ public class Base : MonoBehaviour {
 	public float health = 1;
 	public float damage;
 	public static Base instance = null;
+	public UISprite healthBar;
 
 	void Awake()
 	{
@@ -20,6 +21,7 @@ public class Base : MonoBehaviour {
 	{
 		health-=damage;
 		CameraControl.instance.Shake();
+		gameObject.GetComponent<UIPlayTween>().resetOnPlay = true;
 		gameObject.GetComponent<UIPlayTween>().Play(true);
 		Pokega.SoundControl.instance.PlaySFX("bomb");
 
@@ -32,6 +34,11 @@ public class Base : MonoBehaviour {
 		{
 			Hurt();
 		}
+	}
+
+	void Update()
+	{
+		healthBar.fillAmount = health;
 	}
 
 }
