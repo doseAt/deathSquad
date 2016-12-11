@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Pokega;
+using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour {
 
@@ -39,6 +40,17 @@ public class Base : MonoBehaviour {
 	{
 		healthBar.fillAmount = health;
 		healthLabel.text = ((int)(health * 100)).ToString();
+		if(health <= 0)
+		{
+			Time.timeScale = 0.1f;
+			Invoke("StartOver", 0.2f);
+		}
+	}
+
+
+	void StartOver()
+	{
+		SceneManager.LoadScene("Main");
 	}
 
 }

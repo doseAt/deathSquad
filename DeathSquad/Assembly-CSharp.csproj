@@ -195,6 +195,7 @@
      <Compile Include="Assets\Assets\Scripts\FollowAlpha.cs" />
      <Compile Include="Assets\Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Assets\Scripts\Line.cs" />
+     <Compile Include="Assets\Assets\Scripts\Paralax.cs" />
      <Compile Include="Assets\Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Assets\Scripts\SideWalls.cs" />
      <Compile Include="Assets\Assets\Scripts\SoundControl.cs" />
