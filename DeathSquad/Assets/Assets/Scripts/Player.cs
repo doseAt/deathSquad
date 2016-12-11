@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 	public float attackTime;
 	public float attackRefillTime;
 	public GameObject lightSaber;
+	public GameObject[] attacksLeftUIElemets;
 
 	void Start(){
 		Pokega.SoundControl.instance.PlaySFX("theme");
@@ -125,7 +126,7 @@ public class Player : MonoBehaviour
 
 		}
 
-		if(Input.GetKeyDown(KeyCode.W))
+		if(Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			Blood.instance.ClearBlood();
 		}
@@ -134,6 +135,14 @@ public class Player : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.M))
 		{
 			CameraControl.instance.Shake();
+		}
+
+		for(int i=0; i<5; i++)
+		{
+			if(attacksLeft > i)
+				attacksLeftUIElemets[i].SetActive(true);
+			else
+				attacksLeftUIElemets[i].SetActive(false);
 		}
 
 	}

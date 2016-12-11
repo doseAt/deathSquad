@@ -17,17 +17,19 @@ public class EnemySpawnMachine : MonoBehaviour {
 	public float spawnTime = 10;
 	private int enemyCounter;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		if (mSpawnPointType == spawnPointType.ABOVE) 
-			InvokeRepeating ("addEnemyAbove", 0, spawnTime);
-		else if (mSpawnPointType == spawnPointType.SIDES) {
-		//	InvokeRepeating ("addEnemySides", 0, spawnTime);
-		}
+			InvokeRepeating ("addEnemyAbove", 5f, spawnTime);
+
+	
+
 	}
 
 
-	void addEnemyAbove() {
-		Debug.LogError ("aaa");
+	void addEnemyAbove() 
+	{
+		//Debug.LogError ("aaa");
 		enemyCounter++; // pomeri ovo u for blok
 		revokeRepeatingIfShould ();
 
@@ -48,7 +50,8 @@ public class EnemySpawnMachine : MonoBehaviour {
 	//	Instantiate (enemy, spawnPoint, Quaternion.identity);
 	}
 
-	private void revokeRepeatingIfShould() {
+	private void revokeRepeatingIfShould() 
+	{
 		if (enemyCounter > maxEnemies) {
 			CancelInvoke ();//("addEnemyAbove");
 			//add other later

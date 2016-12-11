@@ -11,7 +11,7 @@ public class TestWalkerScript : MonoBehaviour {
 	bool t;
 
 	private void Update () {
-		progress += Time.deltaTime / durations[currDuration]; Debug.Log(durations[currDuration]);
+		progress += Time.deltaTime / durations[currDuration]; //Debug.Log(durations[currDuration]);
 		if (t) {
 			t = false;
 			//Debug.Log ("sad " + progress);

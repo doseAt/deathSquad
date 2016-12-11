@@ -29,7 +29,7 @@ public class CameraControl : MonoBehaviour {
 	IEnumerator ShakeCo()
 	{
 		isShaking = true;
-		for (int i = 0; i < 50; i++) 
+		for (int i = 0; i < 35; i++) 
 		{			
 			if(transform.rotation.z == 0.0f)
 			{
@@ -47,7 +47,7 @@ public class CameraControl : MonoBehaviour {
 		//Debug.LogError ("Shake Done");
 		isShaking = false;
 		transform.rotation = new Quaternion(0,0,0,1);
+		otherCam.transform.rotation = new Quaternion(0,0,0,1);
+		transform.rotation = new Quaternion(0,0,0,1);
 	}
-
-
 }
