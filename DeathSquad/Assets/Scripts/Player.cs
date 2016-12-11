@@ -22,11 +22,16 @@ public class Player : MonoBehaviour
 	public float attackRefillTime;
 
 
+	void Start(){
+		Pokega.SoundControl.instance.PlaySFX("theme");
+	}
+
 	void Awake()
 	{
 		rigidbody = gameObject.GetComponent<Rigidbody2D>();
 		jumpsLeft = 2;
 		Time.timeScale = 1.2f;
+
 	}
 
 	void Attack()
@@ -34,6 +39,7 @@ public class Player : MonoBehaviour
 		if(attacksLeft <= 0 || attackModeOn)
 			return;
 		gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+		Pokega.SoundControl.instance.PlaySFX("impact");
 		CancelInvoke("RefillAttack");
 		attacksLeft--;
 		attackModeOn = true;
@@ -90,6 +96,7 @@ public class Player : MonoBehaviour
 		//skok
 		if(Input.GetKeyDown(KeyCode.W) && jumpsLeft > 0)
 		{
+			Pokega.SoundControl.instance.PlaySFX ("jump");
 			rigidbody.AddForce(new Vector2(0, verticalMulti), ForceMode2D.Impulse);	
 
 			if(rigidbody.velocity.y > maxVeloPerY)
@@ -103,7 +110,7 @@ public class Player : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			Attack();
-			Pokega.SoundControl.instance.PlaySFX("impact");
+
 		}
 
 		if(Input.GetKeyDown(KeyCode.W))

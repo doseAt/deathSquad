@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Pokega;
 
@@ -20,10 +20,13 @@ public class Base : MonoBehaviour {
 	{
 		health-=damage;
 		CameraControl.instance.Shake();
+<<<<<<< HEAD
 		gameObject.GetComponent<UIPlayTween>().Play(true);
+=======
 		Pokega.SoundControl.instance.PlaySFX("bomb");
 
 
+>>>>>>> bc33f2d1305904af570ae2b06a351b6857f6be56
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
