@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
 	{
 		if(attacksLeft <= 0 || attackModeOn)
 			return;
+		gameObject.GetComponent<UIPlayTween>().tweenGroup = 2;
+		gameObject.GetComponent<UIPlayTween>().Play(true);
 		gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 		Pokega.SoundControl.instance.PlaySFX("impact");
 		CancelInvoke("RefillAttack");
@@ -48,6 +50,15 @@ public class Player : MonoBehaviour
 
 	void AttackOff()
 	{
+		TweenRotation[] trs = gameObject.GetComponentsInChildren<TweenRotation>();
+		foreach(TweenRotation tr in trs)
+		{
+			if(tr.tweenGroup == 2)
+				tr.enabled = false;
+		}
+		//gameObject.GetComponent<UIPlayTween>().
+		gameObject.GetComponent<UIPlayTween>().tweenGroup = 1;
+		gameObject.GetComponent<UIPlayTween>().Play(true);
 		attackModeOn = false;
 		gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 		Invoke("RefillAttack", attackRefillTime);
@@ -73,7 +84,14 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-
+		if(rigidbody.velocity.x < 0)
+		{
+			transform.localScale = new Vector3(-1, 1, 1);
+		}
+		else
+		{
+			transform.localScale = new Vector3(1, 1, 1);
+		}
 		//kretnja levo
 		if(Input.GetKey(KeyCode.A))
 		{
