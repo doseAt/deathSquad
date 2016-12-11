@@ -192,6 +192,7 @@
      <Compile Include="Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SideWalls.cs" />
+     <Compile Include="Assets\Scripts\SoundControl.cs" />
      <Compile Include="Assets\Scripts\SpaceMaker.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.9.0.txt" />

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pokega;
 
 public class Player : MonoBehaviour 
 {
@@ -102,6 +103,7 @@ public class Player : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			Attack();
+			Pokega.SoundControl.instance.PlaySFX("impact");
 		}
 
 		if(Input.GetKeyDown(KeyCode.W))

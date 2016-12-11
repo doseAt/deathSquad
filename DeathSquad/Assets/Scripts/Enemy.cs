@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
 		//instanciraj partikle
 		//instanciraj krv na ekran
 		Blood.instance.DropBlood();
-		Debug.Log("Enemy died");
+		//Debug.Log("Enemy died");
 		Destroy(gameObject);
 
 	}
