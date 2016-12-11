@@ -53,7 +53,7 @@ public class EnemySpawnMachine : MonoBehaviour {
 	private void revokeRepeatingIfShould() 
 	{
 		if (enemyCounter > maxEnemies) {
-			CancelInvoke ();//("addEnemyAbove");
+			//CancelInvoke ();//("addEnemyAbove");
 			//add other later
 		}
 	}

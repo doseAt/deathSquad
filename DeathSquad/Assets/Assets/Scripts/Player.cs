@@ -120,6 +120,8 @@ public class Player : MonoBehaviour
 				rigidbody.velocity = new Vector2(rigidbody.velocity.x, maxVeloPerY);	
 			}
 			jumpsLeft--; 
+			gameObject.GetComponentInChildren<ParticleSystem>().Play(false);
+			//gameObject.GetComponentInChildren<ParticleSystem>().
 		}
 
 		//attack
