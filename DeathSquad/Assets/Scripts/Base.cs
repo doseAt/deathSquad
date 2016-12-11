@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pokega;
 
 public class Base : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class Base : MonoBehaviour {
 	{
 		health-=damage;
 		CameraControl.instance.Shake();
+		Pokega.SoundControl.instance.PlaySFX("bomb");
+
 
 	}
 

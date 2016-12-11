@@ -116,10 +116,13 @@ namespace Pokega
 			//}
 			foreach(AudioSource a in sfxAudioSources)
 			{
-				if(a.clip.name == audioClipName && !a.isPlaying)
+				if(a.clip.name == audioClipName)
 				{
+					if (a.isPlaying)
+						a.Stop ();
 					a.pitch = Random.Range(pitchRandomFrom, pitchRandomTo);
 					a.Play();
+					//a.pla
 
 					return;
 				}
