@@ -25,8 +25,6 @@ public class Base : MonoBehaviour {
 		gameObject.GetComponent<UIPlayTween>().resetOnPlay = true;
 		gameObject.GetComponent<UIPlayTween>().Play(true);
 		Pokega.SoundControl.instance.PlaySFX("bomb");
-
-
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
